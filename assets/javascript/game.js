@@ -16,7 +16,12 @@ var guessesLeft = 9;
 // Functions (Resusable blocks of code that I will call upon when needed)=====================================================
 function startGame () {
     selectedWord = wordOptions[Math.floor(Math.random() * wordOptions.length)];
+    lettersinWord = selectedWord.split("");
+    numBlanks = lettersinWord.length;
+
     console.log(selectedWord);
+    console.log(lettersinWord);
+    console.log(numBlanks);
 }
 
 
