@@ -50,7 +50,47 @@ function checkLetter(letter) {
             isLetterInWord = true;
         }
     }
+
+    //check where in the word the letter exists, then populate our blanksAndSuccesses array.
+    if(isLetterInWord){
+    for (var i=0; i<numBlanks; i++){
+        if(selectedWord[i] === letter) {
+            blanksAndSuccesses[i] = letter;
+        }
+    }
 }
+
+else {
+    wrongLetters.push(letter);
+    guessesLeft --
+}
+
+console.log(blanksAndSuccesses);
+
+}
+
+function roundComplete(){
+    console.log("Win Count:" + WinCount + " | Loss Count: " + lossCount + " | Guesses Left");
+
+    //check if user won
+    if(lettersinWord.toString() === blanksAndSuccesses.toString()) {
+        WinCount++;
+        alert("You Won!");
+
+        document.getElementById("winCounter").innerHTML = WinCount;
+
+        startGame();
+        //check if user lost
+    } else {        
+        lossCount++
+        alert('You loose');
+        }
+
+
+    }
+
+    
+
 
 //Main Process
 //=====================================================
@@ -63,6 +103,7 @@ startGame();
 document.onkeyup = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetter(letterGuessed);
+    roundComplete();
 
     console.log(letterGuessed)
 }
