@@ -24,9 +24,18 @@ function startGame () {
     wrongLetters = [];
     blanksAndSuccesses = [];
 
+    //Populate blanks and successes with right number of blanks.
+    for (var i=0; i<numBlanks; i++){
+        blanksAndSuccesses.push("_");
+    }
+
+    //Change HTML to reflect round conditions
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.join("");
+
     console.log(selectedWord);
     console.log(lettersinWord);
     console.log(numBlanks);
+    console.log(blanksAndSuccesses);
 }
 
 
