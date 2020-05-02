@@ -72,6 +72,11 @@ console.log(blanksAndSuccesses);
 function roundComplete(){
     console.log("Win Count:" + WinCount + " | Loss Count: " + lossCount + " | Guesses Left");
 
+    //Update the HTML to reflect the most recent info
+    document.getElementById("numGuesses").innerHTML = guessesLeft;
+    document.getElementById("wordToGuess").innerHTML = blanksAndSuccesses.toString();
+    document.getElementById("wrongGuesses").innerHTML = wrongLetters.join (" ");
+
     //check if user won
     if(lettersinWord.toString() === blanksAndSuccesses.toString()) {
         WinCount++;
@@ -81,9 +86,12 @@ function roundComplete(){
 
         startGame();
         //check if user lost
-    } else {        
+    } else if (guessesLeft === 0) {        
         lossCount++
         alert('You loose');
+
+        document.getElementById("lossCounter").innerHTML = lossCount;
+        startGame();
         }
 
 
