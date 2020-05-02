@@ -26,7 +26,7 @@ function startGame () {
 
     //Populate blanks and successes with right number of blanks.
     for (var i=0; i<numBlanks; i++){
-        blanksAndSuccesses.push("_");
+        blanksAndSuccesses.push("-");
     }
 
     //Change HTML to reflect round conditions
@@ -41,8 +41,28 @@ function startGame () {
     console.log(blanksAndSuccesses);
 }
 
+function checkLetter(letter) {
+    //check if letter exists in code at all
+    var isLetterInWord = false;
 
-startGame()
+    for (var i=0; i<numBlanks; i++){
+        if(selectedWord[i] === letter) {
+            isLetterInWord = true;
+        }
+    }
+}
 
 //Main Process
 //=====================================================
+
+//Initiates the code the first time
+startGame();
+
+//Register keyclicks
+
+document.onkeyup = function(event) {
+    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+    checkLetter(letterGuessed);
+
+    console.log(letterGuessed)
+}
