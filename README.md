@@ -21,7 +21,7 @@ Can you guess the Disney Character's name?
 
 ### Attached to Portfolio
 
-This link was attached to the Trivia Image on my Portfolio - [ResponsivePortfolio](https://mayhugh82.github.io/Responsive-Portfolio/portfolio.html)
+This link was attached to the Disney Image on my Portfolio - [DianaPortfolio](https://mayhugh82.github.io/DianaPortfolio/)
 
 ## Authors
 
